@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
 
     public void onScanClick(View view) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         class Scanner extends AsyncTask<Void, Void, ArrayList<Computer>> {
             final String TAG = "Scanner ";
 
@@ -218,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         }
         this.devices = devices;
         adapter.setComputers(devices);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
     }
 
     class Updater extends AsyncTask<ArrayList<Computer>, Void, ArrayList<Computer>> {
